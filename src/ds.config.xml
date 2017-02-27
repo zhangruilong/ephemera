@@ -3,7 +3,7 @@
 		<type>mysql</type>
 		<name>mysql</name>
 		<driver>com.mysql.jdbc.Driver</driver>
-		<url>jdbc:mysql://127.0.0.1:3306/xtd?characterEncoding=UTF-8</url>
+		<url>jdbc:mysql://127.0.0.1:3306/omeka?characterEncoding=UTF-8</url>
 		<username>root</username>
 		<password>root</password>
 		<maxconn>10</maxconn>
