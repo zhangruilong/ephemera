@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * searchtextview 实体类
  *@author ZhangRuiLong
@@ -42,7 +43,7 @@ public class Searchtextview
    /**
     * 
     */
-   private Long searchtext;   
+   private String searchtext;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -184,7 +185,7 @@ public class Searchtextview
 	 *设置""属性
 	 *@param searchtext 实体的Searchtext属性
 	 */
-	public void setSearchtext(Long searchtext)
+	public void setSearchtext(String searchtext)
 	{
 		this.searchtext = searchtext;
 	}
@@ -192,7 +193,7 @@ public class Searchtextview
 	/**
 	 *获取""属性
 	 */
-	public Long getSearchtext()
+	public String getSearchtext()
 	{
 		return this.searchtext;
 	}	   
@@ -209,7 +210,7 @@ public class Searchtextview
 	 	,String datestamp
 	 	,String record_type
 	 	,String title
-	 	,Long searchtext
+	 	,String searchtext
 		 ){
 		super();
 		this.id = id;

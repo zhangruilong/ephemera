@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_search_texts 实体类
  *@author ZhangRuiLong
@@ -22,11 +23,15 @@ public class Omeka_search_texts
    /**
     * 
     */
-   private String mpublic;   
+   private Integer public1;   
    /**
     * 
     */
    private String title;   
+   /**
+    * 
+    */
+   private String text;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -83,17 +88,17 @@ public class Omeka_search_texts
 	 *设置""属性
 	 *@param public 实体的Public属性
 	 */
-	public void setPublic(String mpublic)
+	public void setPublic(Integer public1)
 	{
-		this.mpublic = mpublic;
+		this.public1 = public1;
 	}
 	
 	/**
 	 *获取""属性
 	 */
-	public String getPublic()
+	public Integer getPublic()
 	{
-		return this.mpublic;
+		return this.public1;
 	}	   
 
 	/**
@@ -112,6 +117,23 @@ public class Omeka_search_texts
 	{
 		return this.title;
 	}	   
+
+	/**
+	 *设置""属性
+	 *@param text 实体的Text属性
+	 */
+	public void setText(String text)
+	{
+		this.text = text;
+	}
+	
+	/**
+	 *获取""属性
+	 */
+	public String getText()
+	{
+		return this.text;
+	}	   
 	public Omeka_search_texts() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -120,15 +142,17 @@ public class Omeka_search_texts
 		Integer id
 	 	,String record_type
 	 	,Integer record_id
-	 	,String mpublic
+	 	,Integer public1
 	 	,String title
+	 	,String text
 		 ){
 		super();
 		this.id = id;
 	 	this.record_type = record_type;
 	 	this.record_id = record_id;
-	 	this.mpublic = mpublic;
+	 	this.public1 = public1;
 	 	this.title = title;
+	 	this.text = text;
 	}
 }
 

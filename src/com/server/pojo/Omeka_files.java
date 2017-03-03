@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_files 实体类
  *@author ZhangRuiLong
@@ -26,7 +27,7 @@ public class Omeka_files
    /**
     * 
     */
-   private String has_derivative_image;   
+   private Integer has_derivative_image;   
    /**
     * 
     */
@@ -50,15 +51,15 @@ public class Omeka_files
    /**
     * 
     */
-   private String modified;   
+   private Timestamp modified;   
    /**
     * 
     */
-   private String added;   
+   private Timestamp added;   
    /**
     * 
     */
-   private String stored;   
+   private Integer stored;   
    /**
     * 
     */
@@ -136,7 +137,7 @@ public class Omeka_files
 	 *设置""属性
 	 *@param has_derivative_image 实体的Has_derivative_image属性
 	 */
-	public void setHas_derivative_image(String has_derivative_image)
+	public void setHas_derivative_image(Integer has_derivative_image)
 	{
 		this.has_derivative_image = has_derivative_image;
 	}
@@ -144,7 +145,7 @@ public class Omeka_files
 	/**
 	 *获取""属性
 	 */
-	public String getHas_derivative_image()
+	public Integer getHas_derivative_image()
 	{
 		return this.has_derivative_image;
 	}	   
@@ -238,7 +239,7 @@ public class Omeka_files
 	 *设置""属性
 	 *@param modified 实体的Modified属性
 	 */
-	public void setModified(String modified)
+	public void setModified(Timestamp modified)
 	{
 		this.modified = modified;
 	}
@@ -246,7 +247,7 @@ public class Omeka_files
 	/**
 	 *获取""属性
 	 */
-	public String getModified()
+	public Timestamp getModified()
 	{
 		return this.modified;
 	}	   
@@ -255,7 +256,7 @@ public class Omeka_files
 	 *设置""属性
 	 *@param added 实体的Added属性
 	 */
-	public void setAdded(String added)
+	public void setAdded(Timestamp added)
 	{
 		this.added = added;
 	}
@@ -263,7 +264,7 @@ public class Omeka_files
 	/**
 	 *获取""属性
 	 */
-	public String getAdded()
+	public Timestamp getAdded()
 	{
 		return this.added;
 	}	   
@@ -272,7 +273,7 @@ public class Omeka_files
 	 *设置""属性
 	 *@param stored 实体的Stored属性
 	 */
-	public void setStored(String stored)
+	public void setStored(Integer stored)
 	{
 		this.stored = stored;
 	}
@@ -280,7 +281,7 @@ public class Omeka_files
 	/**
 	 *获取""属性
 	 */
-	public String getStored()
+	public Integer getStored()
 	{
 		return this.stored;
 	}	   
@@ -310,15 +311,15 @@ public class Omeka_files
 	 	,Integer item_id
 	 	,Integer order
 	 	,Integer size
-	 	,String has_derivative_image
+	 	,Integer has_derivative_image
 	 	,String authentication
 	 	,String mime_type
 	 	,String type_os
 	 	,String filename
 	 	,String original_filename
-	 	,String modified
-	 	,String added
-	 	,String stored
+	 	,Timestamp modified
+	 	,Timestamp added
+	 	,Integer stored
 	 	,String metadata
 		 ){
 		super();

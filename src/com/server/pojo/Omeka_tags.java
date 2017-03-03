@@ -3,10 +3,10 @@ package com.server.pojo;
 import java.sql.Timestamp;
 import java.math.BigDecimal;
 /**
- * omeka_options 实体类
+ * omeka_tags 实体类
  *@author ZhangRuiLong
  */
-public class Omeka_options
+public class Omeka_tags
 {
    /**
     * ,主键
@@ -16,10 +16,6 @@ public class Omeka_options
     * 
     */
    private String name;   
-   /**
-    * 
-    */
-   private String value;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -54,36 +50,17 @@ public class Omeka_options
 	{
 		return this.name;
 	}	   
-
-	/**
-	 *设置""属性
-	 *@param value 实体的Value属性
-	 */
-	public void setValue(String value)
-	{
-		this.value = value;
-	}
-	
-	/**
-	 *获取""属性
-	 */
-	public String getValue()
-	{
-		return this.value;
-	}	   
-	public Omeka_options() {
+	public Omeka_tags() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Omeka_options(
+	public Omeka_tags(
 		Integer id
 	 	,String name
-	 	,String value
 		 ){
 		super();
 		this.id = id;
 	 	this.name = name;
-	 	this.value = value;
 	}
 }
 

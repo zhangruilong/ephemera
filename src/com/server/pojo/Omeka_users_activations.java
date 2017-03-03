@@ -3,10 +3,10 @@ package com.server.pojo;
 import java.sql.Timestamp;
 import java.math.BigDecimal;
 /**
- * omeka_plugins 实体类
+ * omeka_users_activations 实体类
  *@author ZhangRuiLong
  */
-public class Omeka_plugins
+public class Omeka_users_activations
 {
    /**
     * ,主键
@@ -15,15 +15,15 @@ public class Omeka_plugins
    /**
     * 
     */
-   private String name;   
+   private Integer user_id;   
    /**
     * 
     */
-   private Integer active;   
+   private String url;   
    /**
     * 
     */
-   private String version;   
+   private Timestamp added;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -44,69 +44,69 @@ public class Omeka_plugins
 
 	/**
 	 *设置""属性
-	 *@param name 实体的Name属性
+	 *@param user_id 实体的User_id属性
 	 */
-	public void setName(String name)
+	public void setUser_id(Integer user_id)
 	{
-		this.name = name;
+		this.user_id = user_id;
 	}
 	
 	/**
 	 *获取""属性
 	 */
-	public String getName()
+	public Integer getUser_id()
 	{
-		return this.name;
+		return this.user_id;
 	}	   
 
 	/**
 	 *设置""属性
-	 *@param active 实体的Active属性
+	 *@param url 实体的Url属性
 	 */
-	public void setActive(Integer active)
+	public void setUrl(String url)
 	{
-		this.active = active;
+		this.url = url;
 	}
 	
 	/**
 	 *获取""属性
 	 */
-	public Integer getActive()
+	public String getUrl()
 	{
-		return this.active;
+		return this.url;
 	}	   
 
 	/**
 	 *设置""属性
-	 *@param version 实体的Version属性
+	 *@param added 实体的Added属性
 	 */
-	public void setVersion(String version)
+	public void setAdded(Timestamp added)
 	{
-		this.version = version;
+		this.added = added;
 	}
 	
 	/**
 	 *获取""属性
 	 */
-	public String getVersion()
+	public Timestamp getAdded()
 	{
-		return this.version;
+		return this.added;
 	}	   
-	public Omeka_plugins() {
+	public Omeka_users_activations() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Omeka_plugins(
+	public Omeka_users_activations(
 		Integer id
-	 	,String name
-	 	,Integer active
-	 	,String version
+	 	,Integer user_id
+	 	,String url
+	 	,Timestamp added
 		 ){
 		super();
 		this.id = id;
-	 	this.name = name;
-	 	this.active = active;
-	 	this.version = version;
+	 	this.user_id = user_id;
+	 	this.url = url;
+	 	this.added = added;
 	}
 }
 

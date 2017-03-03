@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_items 实体类
  *@author ZhangRuiLong
@@ -22,19 +23,19 @@ public class Omeka_items
    /**
     * 
     */
-   private String featured;   
+   private Integer featured;   
    /**
     * 
     */
-   private String mpublic;   
+   private Integer public1;   
    /**
     * 
     */
-   private String modified;   
+   private Timestamp modified;   
    /**
     * 
     */
-   private String added;   
+   private Timestamp added;   
    /**
     * 
     */
@@ -95,7 +96,7 @@ public class Omeka_items
 	 *设置""属性
 	 *@param featured 实体的Featured属性
 	 */
-	public void setFeatured(String featured)
+	public void setFeatured(Integer featured)
 	{
 		this.featured = featured;
 	}
@@ -103,7 +104,7 @@ public class Omeka_items
 	/**
 	 *获取""属性
 	 */
-	public String getFeatured()
+	public Integer getFeatured()
 	{
 		return this.featured;
 	}	   
@@ -112,24 +113,24 @@ public class Omeka_items
 	 *设置""属性
 	 *@param public 实体的Public属性
 	 */
-	public void setPublic(String mpublic)
+	public void setPublic(Integer public1)
 	{
-		this.mpublic = mpublic;
+		this.public1 = public1;
 	}
 	
 	/**
 	 *获取""属性
 	 */
-	public String getPublic()
+	public Integer getPublic()
 	{
-		return this.mpublic;
+		return this.public1;
 	}	   
 
 	/**
 	 *设置""属性
 	 *@param modified 实体的Modified属性
 	 */
-	public void setModified(String modified)
+	public void setModified(Timestamp modified)
 	{
 		this.modified = modified;
 	}
@@ -137,7 +138,7 @@ public class Omeka_items
 	/**
 	 *获取""属性
 	 */
-	public String getModified()
+	public Timestamp getModified()
 	{
 		return this.modified;
 	}	   
@@ -146,7 +147,7 @@ public class Omeka_items
 	 *设置""属性
 	 *@param added 实体的Added属性
 	 */
-	public void setAdded(String added)
+	public void setAdded(Timestamp added)
 	{
 		this.added = added;
 	}
@@ -154,7 +155,7 @@ public class Omeka_items
 	/**
 	 *获取""属性
 	 */
-	public String getAdded()
+	public Timestamp getAdded()
 	{
 		return this.added;
 	}	   
@@ -183,10 +184,10 @@ public class Omeka_items
 		Integer id
 	 	,Integer item_type_id
 	 	,Integer collection_id
-	 	,String featured
-	 	,String mpublic
-	 	,String modified
-	 	,String added
+	 	,Integer featured
+	 	,Integer public1
+	 	,Timestamp modified
+	 	,Timestamp added
 	 	,Integer owner_id
 		 ){
 		super();
@@ -194,7 +195,7 @@ public class Omeka_items
 	 	this.item_type_id = item_type_id;
 	 	this.collection_id = collection_id;
 	 	this.featured = featured;
-	 	this.mpublic = mpublic;
+	 	this.public1 = public1;
 	 	this.modified = modified;
 	 	this.added = added;
 	 	this.owner_id = owner_id;

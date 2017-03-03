@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_dspace_restapi_harvester_elements 实体类
  *@author ZhangRuiLong

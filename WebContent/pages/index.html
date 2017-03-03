@@ -1,31 +1,236 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="js/jquery-2.1.0.min.js"></script>
-    </head>
-    <body>
-        <div class="content">
-            <div class="topLeft">
-                <div class="logo"></div>
-                <div class="search">
-                    <form>
-                        <input type="image" src="img/searchGlass.jpg" class="searchGlass">
-                        <input type="text" name="searchQuery" class="searchBox">
-                        <input type="button" value = "Advanced" name="advancedSearch" class="advancedSearchButton">
-                    </form>
-                </div>    
-            </div>
-            <div class="aboutUs">
-                    <p>
-                        Information about us...etc whatever random information hello goodbye.
-                    </p>
-            </div>
-            <div style="clear: both;"></div>
-            
-            <div class="pins"></div>
-        </div>
-        
-        <script src="js/script.js"></script>
-    </body>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Ephemera</title>
+
+    <!-- Bootstrap -->
+    <link href="zrlextpages/common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background-color: gray;">
+<header>
+	<div style="text-align: center;" ><img height="80" src="images/new_header.png" /></div>
+	<div class="container">
+	<div class="row clearfix">
+	<div class="col-md-12 column">
+			<nav class="navbar navbar-default" role="navigation" style="background-color: gray;">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul style="width: 100%" class="nav navbar-nav">
+						<li id="menuabout" style="width: 25%;">
+							<a href="#" onclick="menu(this,'about');">
+								<dd style="text-align: center;font-size:xx-small;color:red;padding-right: 50px;">WHAT</dd>
+								<dt style="text-align: center;font-size:x-large;color: white;">ABOUT</dt>
+								<dd style="text-align: center;font-size:xx-small;color: red;padding-left: 70px;">US</dd>
+								<ul class="dropdown-menu" style="left: 60px">
+								<li>
+									 <a href="#" onclick="menu(this,'aboutdes');">DESCRIPTION</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'aboutteam');">TEAM</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#">GRANT</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#">HISTORY</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#">COLLABORATORS</a>
+								</li>
+								</ul>
+							</a>
+						</li>
+						<li style="width: 24%">
+						 <a href="#" onclick="menu(this,'working');">
+						 		<dd style="text-align: center;font-size:xx-small;color: white;padding-right: 50px;">WHAT ARE WE</dd>
+								<dt style="text-align: center;font-size:x-large;color: white;">WORKING</dt>
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-left: 70px;">ON</dd> 
+						</a>
+						</li>
+						<li style="width: 24%">
+							 <a href="#">
+						 		<dd style="text-align: center;font-size:xx-small;color: white;padding-right: 50px;">WHAT</dd>
+								<dt style="text-align: center;font-size:x-large;color: white;">FEATURES</dt>
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-left: 70px;">DO WE HAVE</dd> 
+							</a>
+						</li>
+						<li style="width: 25%">
+							 <a href="#">
+						 		<dd style="text-align: center;font-size:xx-small;color: white;padding-right: 50px;">READ OUR</dd>
+								<dt style="text-align: center;font-size:x-large;color: white;">NEWS</dt>
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-left: 70px;">NOW</dd> 
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+	</div>
+	</div>
+	</div>
+</header>
+<section id="about">
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<img height="280px" width="100%" src="images/middle.png" />
+			<div class="row clearfix">
+				<div class="col-md-8 column">
+					<div class="page-header">
+						<h4>About Ephemera Project</h4>
+					</div>
+					Chinese Commercial Advertisement Archive (CCAA) is an image-oriented and research-directed online archive that opens to all scholarly communities. The archive consists of high-quality digital images of advertisements for international brands published in leading Chinese newspapers from the late 19th century to the middle of 20th century in China, along with research metadata for each image. All advertisements for all commodities that foreign companies produced and marketed are included. We selected the major commercial newspapers in each of the five most significant Chinese treaty port cities. These include Shanghai’s Shen-pao (申报), Tianjin’s Ta Kung Pao (大公报), Shenyang’s Sheng-ching Shih-pao (盛京时报), Hankou’s Hankow Times (汉口中西报) and the Yuet Wa Po (越华报) in Guangzhou to insure the sample is representative and comparative. 
+<p>
+Given the milieu of global capitalism in the colonial period, the CCAA’s theoretical objective is to create a means of drawing general pictures of social-economic change in major Chinese treaty-ports and their marketing catchment areas, between the late 19th and mid-20th centuries. We hope to better understand how people in the new environments thought about commodity culture. In this regard, the CCAA’s first set of goals included: 1) collecting and digitizing advertisements collected from the five representative newspapers; 2) designing and laying the foundations for a searchable, online Archive; and 3) placing all images in the Archive, fully coded, free for use and publicly accessible on the Web.
+				</div>
+				<div class="col-md-4 column">
+					<div class="page-header">
+						<h4>Sponsors</h4>
+					</div>
+					<div style="text-align: center;" ><img width="20%"  src="images/new_luce.png" /></div>
+					<div style="text-align: center;" ><img width="30%"  src="images/new_rice.png" /></div>
+					<div class="page-header">
+						<h4>Made By</h4>
+					</div>
+					<div style="text-align: center;" ><img width="50%"  src="images/CCAS logo - white.jpg" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="aboutteam" hidden="true">
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<img height="280px" width="100%" src="images/middle.png" />
+			<div class="row clearfix">
+				<div class="col-md-8 column">
+					<div class="page-header">
+						<h4>About Ephemera Project</h4>
+					</div>
+					RESEARCHERS
+					<p>
+<p>Tani Barlow(白露), Principal investigator, T. T. and W. F. Chao Professor of Asian Studies, Rice University; Senior Editor, positions: east asia cultures critique.
+<p>Jing Chen(陈静), Project Manager, Ephemera Project Postdoctoral Fellow, Rice University
+<p>Ke Deng (邓柯), Research Associate, Mathematical Sciences Center, Tsinghua University
+
+<p>LIBRARIAN/TECHNICIAN
+<p>Ying Jin (金莹), Programmer, Center of Digital Scholarship Services, Fondren Library, Rice University
+<p>Monica Rivero, Digital Curation Coordinator, Fondren Library, Rice University
+<p>Minhua Guo (郭敏华), Website Developer
+<p>He Lin (林鹤), Director of Center of Information Processing, Shanghai Library
+<p>Qian Yang (杨倩), Director of IT Department, Shanghai Library
+<p>Jie Fang (方杰), Engineer of the Platform for Information Processing, Shanghai Library
+<p>Shushu Wang (王姝姝), Assistant, Digital Image Collections, Shanghai Library
+
+<p>INTERN STUDENT
+<p>Lisa Li, Rice University (2012-2013)
+<p>Judy Liu, Rice University (2012-2014)
+<p>Wei Wang (王伟), Rice University (2012-2013)
+<p>Fanglu Sun, Rice University (2013-)
+<p>Ankang Cheng, Rice University (2013-)
+<p>Arthur Cao, Rice University (2014)
+<p>Yichen Zhang, Rice University (2014-)
+<p>Shuya Sun, Rice University (2014-)
+<p>Peter Elmers, Rice University (2014-)
+<p>Ziyao Li, Rice University (2014-)
+<p>Yonggang Yan (闫永刚), Shanghai Jiao Tong University (2011-) 
+<p>Yudong Su (苏玉栋), Shanghai Jiao Tong University (2011-) 
+<p>Zhi Wang (王志), East China University of Science and Technology (2013)
+<p>Yang Lei (雷杨), East China University of Science and Technology (2013)
+<p>Mang Wang (汪漭), Peking University(2013)
+				</div>
+				<div class="col-md-4 column">
+					<div class="page-header">
+						<h4>Sponsors</h4>
+					</div>
+					<div style="text-align: center;" ><img width="20%"  src="images/new_luce.png" /></div>
+					<div style="text-align: center;" ><img width="30%"  src="images/new_rice.png" /></div>
+					<div class="page-header">
+						<h4>Made By</h4>
+					</div>
+					<div style="text-align: center;" ><img width="50%"  src="images/CCAS logo - white.jpg" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="working" hidden="ture">
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-6 column">
+					<div class="page-header">
+						<h4>The Interactive Map of Advertisment Gallery</h4>
+					</div>
+					<div style="text-align: center;" ><img width="70%"  src="images/ditu.png" /></div>
+				</div>
+				<div class="col-md-6 column">
+					<div class="page-header">
+						<h4>Chinese Commericial Advertisment Archieve</h4>
+					</div>
+					<div style="text-align: center;" ><img width="70%"  src="images/ditie.png" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="working" hidden="ture">
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-6 column">
+					<div class="page-header">
+						<h4>The Interactive Map of Advertisment Gallery</h4>
+					</div>
+					<div style="text-align: center;" ><img width="70%"  src="images/ditu.png" /></div>
+				</div>
+				<div class="col-md-6 column">
+					<div class="page-header">
+						<h4>Chinese Commericial Advertisment Archieve</h4>
+					</div>
+					<div style="text-align: center;" ><img width="70%"  src="images/ditie.png" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<footer>
+<div style="text-align: center;" ><img height="40" src="images/new_red_line.png" /></div>
+<div style="text-align: center;" >@copyright</div>
+<div class="row clearfix">
+	<div class="col-md-4 column">
+		<div style="text-align: center;" ><img width="3%"  src="images/new_luce.png" /><img width="15%"  src="images/new_rice.png" style="padding-left: 10px;"/></div>
+	</div>
+</div>
+</footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>

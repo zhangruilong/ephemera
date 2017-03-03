@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_dspace_restapi_harvester_harvests 实体类
  *@author ZhangRuiLong
@@ -42,7 +43,7 @@ public class Omeka_dspace_restapi_harvester_harvests
    /**
     * 
     */
-   private String status;   
+   private Integer status;   
    /**
     * 
     */
@@ -54,15 +55,15 @@ public class Omeka_dspace_restapi_harvester_harvests
    /**
     * 
     */
-   private Date initiated;   
+   private Timestamp initiated;   
    /**
     * 
     */
-   private Date completed;   
+   private Timestamp completed;   
    /**
     * 
     */
-   private Date start_from;   
+   private Timestamp start_from;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -204,7 +205,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	 *设置""属性
 	 *@param status 实体的Status属性
 	 */
-	public void setStatus(String status)
+	public void setStatus(Integer status)
 	{
 		this.status = status;
 	}
@@ -212,7 +213,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	/**
 	 *获取""属性
 	 */
-	public String getStatus()
+	public Integer getStatus()
 	{
 		return this.status;
 	}	   
@@ -255,7 +256,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	 *设置""属性
 	 *@param initiated 实体的Initiated属性
 	 */
-	public void setInitiated(Date initiated)
+	public void setInitiated(Timestamp initiated)
 	{
 		this.initiated = initiated;
 	}
@@ -263,7 +264,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	/**
 	 *获取""属性
 	 */
-	public Date getInitiated()
+	public Timestamp getInitiated()
 	{
 		return this.initiated;
 	}	   
@@ -272,7 +273,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	 *设置""属性
 	 *@param completed 实体的Completed属性
 	 */
-	public void setCompleted(Date completed)
+	public void setCompleted(Timestamp completed)
 	{
 		this.completed = completed;
 	}
@@ -280,7 +281,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	/**
 	 *获取""属性
 	 */
-	public Date getCompleted()
+	public Timestamp getCompleted()
 	{
 		return this.completed;
 	}	   
@@ -289,7 +290,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	 *设置""属性
 	 *@param start_from 实体的Start_from属性
 	 */
-	public void setStart_from(Date start_from)
+	public void setStart_from(Timestamp start_from)
 	{
 		this.start_from = start_from;
 	}
@@ -297,7 +298,7 @@ public class Omeka_dspace_restapi_harvester_harvests
 	/**
 	 *获取""属性
 	 */
-	public Date getStart_from()
+	public Timestamp getStart_from()
 	{
 		return this.start_from;
 	}	   
@@ -314,12 +315,12 @@ public class Omeka_dspace_restapi_harvester_harvests
 	 	,String collection_name
 	 	,String collection_handle
 	 	,Integer collection_size
-	 	,String status
+	 	,Integer status
 	 	,String status_messages
 	 	,String resumption_token
-	 	,Date initiated
-	 	,Date completed
-	 	,Date start_from
+	 	,Timestamp initiated
+	 	,Timestamp completed
+	 	,Timestamp start_from
 		 ){
 		super();
 		this.id = id;

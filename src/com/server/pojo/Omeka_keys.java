@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_keys 实体类
  *@author ZhangRuiLong
@@ -26,11 +27,11 @@ public class Omeka_keys
    /**
     * 
     */
-   private String ip;   
+   private byte[] ip;   
    /**
     * 
     */
-   private String accessed;   
+   private Timestamp accessed;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -104,7 +105,7 @@ public class Omeka_keys
 	 *设置""属性
 	 *@param ip 实体的Ip属性
 	 */
-	public void setIp(String ip)
+	public void setIp(byte[] ip)
 	{
 		this.ip = ip;
 	}
@@ -112,7 +113,7 @@ public class Omeka_keys
 	/**
 	 *获取""属性
 	 */
-	public String getIp()
+	public byte[] getIp()
 	{
 		return this.ip;
 	}	   
@@ -121,7 +122,7 @@ public class Omeka_keys
 	 *设置""属性
 	 *@param accessed 实体的Accessed属性
 	 */
-	public void setAccessed(String accessed)
+	public void setAccessed(Timestamp accessed)
 	{
 		this.accessed = accessed;
 	}
@@ -129,7 +130,7 @@ public class Omeka_keys
 	/**
 	 *获取""属性
 	 */
-	public String getAccessed()
+	public Timestamp getAccessed()
 	{
 		return this.accessed;
 	}	   
@@ -142,8 +143,8 @@ public class Omeka_keys
 	 	,Integer user_id
 	 	,String label
 	 	,String key
-	 	,String ip
-	 	,String accessed
+	 	,byte[] ip
+	 	,Timestamp accessed
 		 ){
 		super();
 		this.id = id;

@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_records_tags 实体类
  *@author ZhangRuiLong
@@ -26,7 +27,7 @@ public class Omeka_records_tags
    /**
     * 
     */
-   private String time;   
+   private Timestamp time;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -100,7 +101,7 @@ public class Omeka_records_tags
 	 *设置""属性
 	 *@param time 实体的Time属性
 	 */
-	public void setTime(String time)
+	public void setTime(Timestamp time)
 	{
 		this.time = time;
 	}
@@ -108,7 +109,7 @@ public class Omeka_records_tags
 	/**
 	 *获取""属性
 	 */
-	public String getTime()
+	public Timestamp getTime()
 	{
 		return this.time;
 	}	   
@@ -121,7 +122,7 @@ public class Omeka_records_tags
 	 	,Integer record_id
 	 	,String record_type
 	 	,Integer tag_id
-	 	,String time
+	 	,Timestamp time
 		 ){
 		super();
 		this.id = id;

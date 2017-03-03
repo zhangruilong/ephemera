@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_processes 实体类
  *@author ZhangRuiLong
@@ -14,7 +15,7 @@ public class Omeka_processes
    /**
     * 
     */
-   private String mclass;   
+   private String class1;   
    /**
     * 
     */
@@ -26,7 +27,7 @@ public class Omeka_processes
    /**
     * 
     */
-   private String status;   
+   private Integer status;   
    /**
     * 
     */
@@ -34,11 +35,11 @@ public class Omeka_processes
    /**
     * 
     */
-   private String started;   
+   private Timestamp started;   
    /**
     * 
     */
-   private String stopped;   
+   private Timestamp stopped;   
     //属性方法	    
      /**
 	 *设置主键""属性
@@ -61,17 +62,17 @@ public class Omeka_processes
 	 *设置""属性
 	 *@param class 实体的Class属性
 	 */
-	public void setClass(String mclass)
+	public void setClass(String class1)
 	{
-		this.mclass = mclass;
+		this.class1 = class1;
 	}
 	
 	/**
 	 *获取""属性
 	 */
-	public String getmClass()
+	public String getClass1()
 	{
-		return this.mclass;
+		return this.class1;
 	}	   
 
 	/**
@@ -112,7 +113,7 @@ public class Omeka_processes
 	 *设置""属性
 	 *@param status 实体的Status属性
 	 */
-	public void setStatus(String status)
+	public void setStatus(Integer status)
 	{
 		this.status = status;
 	}
@@ -120,7 +121,7 @@ public class Omeka_processes
 	/**
 	 *获取""属性
 	 */
-	public String getStatus()
+	public Integer getStatus()
 	{
 		return this.status;
 	}	   
@@ -146,7 +147,7 @@ public class Omeka_processes
 	 *设置""属性
 	 *@param started 实体的Started属性
 	 */
-	public void setStarted(String started)
+	public void setStarted(Timestamp started)
 	{
 		this.started = started;
 	}
@@ -154,7 +155,7 @@ public class Omeka_processes
 	/**
 	 *获取""属性
 	 */
-	public String getStarted()
+	public Timestamp getStarted()
 	{
 		return this.started;
 	}	   
@@ -163,7 +164,7 @@ public class Omeka_processes
 	 *设置""属性
 	 *@param stopped 实体的Stopped属性
 	 */
-	public void setStopped(String stopped)
+	public void setStopped(Timestamp stopped)
 	{
 		this.stopped = stopped;
 	}
@@ -171,7 +172,7 @@ public class Omeka_processes
 	/**
 	 *获取""属性
 	 */
-	public String getStopped()
+	public Timestamp getStopped()
 	{
 		return this.stopped;
 	}	   
@@ -181,17 +182,17 @@ public class Omeka_processes
 	}
 	public Omeka_processes(
 		Integer id
-	 	,String mclass
+	 	,String class1
 	 	,Integer user_id
 	 	,Integer pid
-	 	,String status
+	 	,Integer status
 	 	,String args
-	 	,String started
-	 	,String stopped
+	 	,Timestamp started
+	 	,Timestamp stopped
 		 ){
 		super();
 		this.id = id;
-	 	this.mclass = mclass;
+	 	this.class1 = class1;
 	 	this.user_id = user_id;
 	 	this.pid = pid;
 	 	this.status = status;

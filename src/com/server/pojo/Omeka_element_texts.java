@@ -1,6 +1,7 @@
 package com.server.pojo;
 
-import java.sql.Date;
+import java.sql.Timestamp;
+import java.math.BigDecimal;
 /**
  * omeka_element_texts 实体类
  *@author ZhangRuiLong
@@ -26,7 +27,7 @@ public class Omeka_element_texts
    /**
     * 
     */
-   private String html;   
+   private Integer html;   
    /**
     * 
     */
@@ -104,7 +105,7 @@ public class Omeka_element_texts
 	 *设置""属性
 	 *@param html 实体的Html属性
 	 */
-	public void setHtml(String html)
+	public void setHtml(Integer html)
 	{
 		this.html = html;
 	}
@@ -112,7 +113,7 @@ public class Omeka_element_texts
 	/**
 	 *获取""属性
 	 */
-	public String getHtml()
+	public Integer getHtml()
 	{
 		return this.html;
 	}	   
@@ -142,7 +143,7 @@ public class Omeka_element_texts
 	 	,Integer record_id
 	 	,String record_type
 	 	,Integer element_id
-	 	,String html
+	 	,Integer html
 	 	,String text
 		 ){
 		super();
