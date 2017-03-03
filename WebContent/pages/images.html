@@ -66,7 +66,8 @@ a:hover{color:#999;}
 </style>
 <script type="text/javascript" src="../zrlextpages/common/jquery/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
-window.startsetdata = true;
+var startsetdata = true;
+var mindex = 0
 var limit = 0;
 var data;
 $(function(){
@@ -77,9 +78,6 @@ $(function(){
 			var resp = eval(r); 
 			data = resp.root;
 			setdata(data[limit]);
-			setdata(data[limit]);
-			setdata(data[limit]);
-			setdata(data[limit]);
 		},
 		error:function(r) {
 			var resp = eval(r); 
@@ -89,14 +87,14 @@ $(function(){
 	//设置滚动加载
 	window.onscroll = function(){
 		//校验数据请求
-		if(window.startsetdata&&getCheck()){
-			setdata(data[limit]);
+		if(getCheck()){
+			setTimeout("setdata(data[limit])",500);
 		}
 	}
 })
 function setdata(item){
-	if(!window.startsetdata) return;
-	window.startsetdata = false;
+	if(!startsetdata) return;
+	startsetdata = false;
 	var wrap = document.getElementById('wrap');
 	//创建box
 	var box = document.createElement('div');
@@ -126,7 +124,10 @@ function setdata(item){
 	title.appendChild(a);
 	PBL('wrap','box');
 	limit +=1;
-	window.startsetdata = true;
+	$('img').load(function(){
+		// 加载完成 
+		startsetdata = true;
+	});
 }
 /**
 * 瀑布流主函数
@@ -153,6 +154,7 @@ function PBL(wrap,box){
 			everyH[minIndex] += boxs[i].offsetHeight;//更新最小列的高度
 		}
 	}
+	mindex = minIndex;
 }
 /**
 * 获取类元素
