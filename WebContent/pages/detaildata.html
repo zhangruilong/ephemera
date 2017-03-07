@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Ephemera</title>
+
+    <!-- Bootstrap -->
+    <link href="../zrlextpages/common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body style="background-color: gray;">
+<header>
+	<div style="text-align: center;" ><img height="80" src="images/new_header.png" /></div>
+</header>
+<section id="images">
+	<div id="wrap">
+	</div>
+</section>
+<section id="list">
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<ol id="listdata">
+			</ol>
+		</div>
+	</div>
+</div>
+</section>
+<section id="detail" hidden="true">
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<dl>
+				<dt>
+					Description lists
+				</dt>
+				<dd>
+					A description list is perfect for defining terms.
+				</dd>
+				<dt>
+					Euismod
+				</dt>
+				<dd>
+					Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
+				</dd>
+				<dd>
+					Donec id elit non mi porta gravida at eget metus.
+				</dd>
+				<dt>
+					Malesuada porta
+				</dt>
+				<dd>
+					Etiam porta sem malesuada magna mollis euismod.
+				</dd>
+				<dt>
+					Felis euismod semper eget lacinia
+				</dt>
+				<dd>
+					Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+				</dd>
+			</dl>
+		</div>
+	</div>
+</div>
+</section>
+<footer>
+<div style="text-align: center;" ><img height="40" src="images/new_red_line.png" /></div>
+<div style="text-align: center;" >@copyright</div>
+<div class="row clearfix">
+	<div class="col-md-4 column">
+		<div style="text-align: center;" ><img width="3%"  src="images/new_luce.png" /><img width="15%"  src="images/new_rice.png" style="padding-left: 10px;"/></div>
+	</div>
+</div>
+</footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="../zrlextpages/common/jquery/jquery-2.1.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	$.ajax({
+    		url: "Omeka_search_textsAction.do?method=selLimit",
+    		data: {
+    			wheresql:'title="'+window.localStorage.getItem("titleval")+'"'
+    		},
+    		success: function(r) {
+    			var resp = eval('('+r+')'); 
+    			$("#listdata").html("");
+    			$.each(resp.root, function(i, item) {	
+    				$("#listdata").append('<li onclick="nextpages(\''+item.record_id+'\'">'+item.text+'</li>');
+    			});
+    		},
+    		error:function(r) {
+    			var resp = eval(r); 
+    			alert(resp.msg);
+    		}
+    	});
+    })
+    function nextpages(){
+    		
+    	}
+    </script>
+  </body>
+</html>

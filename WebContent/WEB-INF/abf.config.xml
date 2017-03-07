@@ -34,6 +34,7 @@
 
 	<bean id="Omeka_element_textsAction" class="com.server.action.Omeka_element_textsAction" />
 	<bean id="Omeka_dspace_restapi_harvester_recordsAction" class="com.server.action.Omeka_dspace_restapi_harvester_recordsAction" />
+	<bean id="Omeka_search_textsAction" class="com.server.action.more.Omeka_search_textsAction" />
 	
 	<bean id="SearchtextviewAction" class="com.server.action.SearchtextviewAction" />
 </beans>

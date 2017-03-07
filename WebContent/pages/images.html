@@ -8,7 +8,7 @@
     <title>Ephemera</title>
 
     <!-- Bootstrap -->
-    <link href="zrlextpages/common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../zrlextpages/common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -67,12 +67,11 @@ a:hover{color:#999;}
 <script type="text/javascript" src="../zrlextpages/common/jquery/jquery-2.1.4.min.js"></script>
 <script type="text/javascript">
 var startsetdata = true;
-var mindex = 0
 var limit = 0;
 var data;
 $(function(){
 	$.ajax({
-		url: "http://localhost:8080/zrl/SearchtextviewAction.do?method=selQuery",
+		url: "SearchtextviewAction.do?method=selQuery",
 		dataType:"json",
 		success: function(r) {
 			var resp = eval(r); 
@@ -154,7 +153,10 @@ function PBL(wrap,box){
 			everyH[minIndex] += boxs[i].offsetHeight;//更新最小列的高度
 		}
 	}
-	mindex = minIndex;
+	$(".box").click(function(){
+		window.localStorage.setItem("titleval",$(this).find(".title a").text());
+		window.location.href = "listdata.html";
+	});
 }
 /**
 * 获取类元素
@@ -224,14 +226,14 @@ function getStyle(box,top,left,index){
 <header>
 	<div style="text-align: center;" ><img height="80" src="images/new_header.png" /></div>
 </header>
-<section>
+<section id="images">
 	<div id="wrap">
 	</div>
 </section>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
