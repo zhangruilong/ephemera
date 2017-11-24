@@ -1,0 +1,247 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ephemera</title>
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="stylesheet" href="../zrlextpages/common/bootstrap/css/bootstrap.min.css">
+	<script src="../zrlextpages/common/jquery/jquery-2.1.4.min.js"></script>
+	<script src="../zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
+  <style>
+*{margin:0; padding:0}
+ul,li{list-style:none;}
+#box{margin:20px}
+#box ul li a {color: #fff;overflow: hidden; display:block; width:100%; height:100%}
+#box ul li{float: left;margin: 10px; position:relative; height:300px;width:180px; overflow:hidden}
+#box ul li img{width: 100%;max-height: 300px;max-width:180px; }
+#box ul li div{display: none;position:absolute; width:100%; height:100%;background: none repeat scroll 0 0 rgba(96, 96, 96, 0.9); font-size: 12px; z-index:0}
+#box ul li a h2 {
+    font-size: 24px;
+    font-weight: normal;
+    height: 100px;
+    line-height: 24px;
+    margin: 10px 8px 8px;
+    overflow: hidden;
+    text-align: center;
+}
+#box ul li a em {
+    background: none repeat scroll 0 0 rgba(255, 0, 0, 0.5);
+    display: block;
+    height: 20px;
+    width: 80px;
+    margin: 0 0 0 50px;
+    text-align: center;
+}
+#box ul li a p {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 6px 8px;
+}
+</style>
+</head>
+<body>
+<div style="text-align: center;background-color: #1F1C3B;" ><img height="80" style="padding-top: 20px;" src="images/new_header.png" /></div>
+<div id="box">
+	<ul class="content">
+		<!-- <li><a href="#"><img src="http://www.lagou.com/upload/promotion/ff8080814d429a94014d42d58a580011.png">
+        <div class="hot_info"><h2></h2><em>ITEM:111</em></div></a></li> -->
+	</ul>
+</div>
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div style="width: 80%;" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body" style="text-align: center;">
+          	  	<button id="brand" type="button" class="btn btn-danger">BRAND</button>
+          	 	<button id="company" type="button" class="btn btn-primary">COMPANY</button>
+          	  	<button id="metadata" type="button" class="btn btn-primary" data-toggle="dropdown">METADATA</button>
+		        <ul id="detailsdate" style="right:300px;" class="dropdown-menu pull-right" role="menu" aria-labelledby="dLabel">
+		            <li>
+		                <a href="#">1990-12-12</a></li>
+		            <li>
+		                <a href="#">1990-12-13</a></li>
+		            <li>
+		                <a href="#">1990-12-14</a></li>
+		        </ul>
+            </div>
+            <div id="details" class="modal-body" ></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div> 
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="myModalbigimg" tabindex="-2" role="dialog" aria-labelledby="myModalbigimgLabel" aria-hidden="true">
+    <div style="width: 80%" class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div id="bigimg" class="modal-body" style="text-align: center;"></div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>   
+<script>
+$(function(){
+	if(window.localStorage.getItem("sdishes")==null) window.localStorage.setItem("sdishes","[]");
+	$.ajax({
+		url: "Server_recordService.do?method=selImages",
+		dataType:"json",
+		data:{
+			wheresql:window.localStorage.getItem("wheresql"),
+		},
+		success: function(r) {
+			var resp = eval(r); 
+			$(".content").html("");
+			$.each(resp.root, function(i, item) {
+				$(".content").append('<li><a href="javascript:volid(0);" onclick="getcompany(this);" name="'+item.recordproduct+'"><img src="tupian/'+item.recordid+'.png">'
+				        +'<div class="hot_info"><h2></h2><em>ITEM：'+item.recorddetails+'</em></div></a></li>');
+		    });
+			var box = document.getElementById('box');
+			var oLi = box.getElementsByTagName('li');
+			var oDiv = box.getElementsByClassName('hot_info');
+			for(var i=0;i<oLi.length;i++){
+				oLi[i].index = i;
+				oLi[i].onmouseover = function(){
+					for(var j=0;j<oDiv.length;j++){
+						oDiv[j].style.display='none';
+					}
+					oDiv[this.index].style.display='block';
+					oDiv[this.index].style.left = '0';
+					oDiv[this.index].style.top = '0';
+					oDiv[this.index].style['transition'] = 'all 300ms ease 0s';
+					
+					var _self = this.index;
+					oDiv[_self].onmouseout = function(){
+						setTimeout(function(){
+							oDiv[_self].style.display='none';
+						},300)
+						return false;
+					}
+				}
+			}
+		},
+		error:function(r) {
+			var resp = eval(r); 
+			alert(resp.msg);
+		}
+	});
+})
+function getcompany(obj){
+	var product = $(obj).attr("name");
+	product = product.replace("'", "''");
+	$('.modal-body button').removeClass("btn-danger");
+	$('.modal-body button').addClass("btn-primary");
+	$('#brand').addClass("btn-danger");
+	$("#detailsdate").html("");
+	$("#details").html("");
+	$.ajax({
+		url: "Server_recordService.do?method=selCompany&wheresql=recordproduct='"+product+"'",
+		dataType:"json",
+		success: function(r) {
+			var resp = eval(r); 
+			$.each(resp.root, function(i, item) {
+				$("#details").html(item.companypie+"<p>"+item.companypic);
+				$("#detailsdate").append('<li><a href="javascript:volid(0);" onclick="showrecorddate(\''+item.recorddate+'\')">'+item.recorddate+'</a></li>');
+		    });
+			$('#myModal').modal({
+				backdrop:'static',
+		        keyboard: true
+		    });
+			window.localStorage.setItem("sdishes",JSON.stringify(resp.root));
+		},
+		error:function(r) {
+			var resp = eval(r); 
+			alert(resp.msg);
+		}
+	});
+}
+$('#brand').click(function(){
+	$('.modal-body button').removeClass("btn-danger");
+	$('.modal-body button').addClass("btn-primary");
+	$('#brand').addClass("btn-danger");
+	var sdishes = JSON.parse(window.localStorage.getItem("sdishes"));
+	$.each(sdishes, function(i, item) {
+		$("#details").html(item.companypie+"<p>"+item.companypic);
+		return false;
+	});
+})
+$('#company').click(function(){
+	$('.modal-body button').removeClass("btn-danger");
+	$('.modal-body button').addClass("btn-primary");
+	$('#company').addClass("btn-danger");
+	var sdishes = JSON.parse(window.localStorage.getItem("sdishes"));
+	$.each(sdishes, function(i, item) {
+		$("#details").html(item.companycie+"<p>"+item.companycic);
+		return false;
+	});
+})
+$('#metadata').click(function(){
+	$('.modal-body button').removeClass("btn-danger");
+	$('.modal-body button').addClass("btn-primary");
+	$('#metadata').addClass("btn-danger");
+})
+function showrecorddate(recorddate){
+	var sdishes = JSON.parse(window.localStorage.getItem("sdishes"));
+	$.each(sdishes, function(i, item) {
+		if(recorddate==item.recorddate){
+			var htmlstr = '*点击图片可以放大<div style="text-align: center;">'
+				+'<img onclick="bigimg(\''+item.recordid
+				+'\');" style="height: 300px;padding: 20px" src="tupian/'+item.recordid
+				+'.png"><img onclick="bigimg(\''+item.recordid
+				+'PAGE\');" style="height: 300px;padding: 20px" src="tupian/'+item.recordid
+				+'PAGE.png"></div>'
+	            +'<dl><dt>商品Product</dt><dd>'+item.recordproduct;
+			if(!isNull(item.recordcategory )) htmlstr +='</dd><p><dt>分类Category</dt><dd>'+item.recordcategory ;
+			if(!isNull(item.recordcompany )) htmlstr +='</dd><p><dt>公司Company</dt><dd>'+item.recordcompany;
+			if(!isNull(item.recordnationality )) htmlstr +='</dd><p><dt>國别Nationality</dt><dd>'+item.recordnationality;
+			if(!isNull(item.recordposition )) htmlstr +='</dd><p><dt>版面位置Position</dt><dd>'+item.recordposition;
+			if(!isNull(item.recordsubject )) htmlstr +='</dd><p><dt>主题词Subject</dt><dd>'+item.recordsubject;
+			if(!isNull(item.recordagency )) htmlstr +='</dd><p><dt>代理商Agency</dt><dd>'+item.recordagency;
+			if(!isNull(item.recordaddress )) htmlstr +='</dd><p><dt>地址Address</dt><dd>'+item.recordaddress;
+			if(!isNull(item.recordotherinfo )) htmlstr +='</dd><p><dt>相关网站OtherInfo</dt><dd>'+item.recordotherinfo;
+			if(!isNull(item.recordyear )) htmlstr +='</dd><p><dt>年Year</dt><dd>'+item.recordyear;
+			if(!isNull(item.recordissuenumber )) htmlstr +='</dd><p><dt>期号IssueNumber</dt><dd>'+item.recordissuenumber;
+			if(!isNull(item.recordpage )) htmlstr +='</dd><p><dt>版面Page</dt><dd>'+item.recordpage;
+			if(!isNull(item.recorddate )) htmlstr +='</dd><p><dt>公历日期Date</dt><dd>'+item.recorddate;
+			if(!isNull(item.recordlunadate )) htmlstr +='</dd><p><dt>农历日期LunaDate</dt><dd>'+item.recordlunadate;
+			if(!isNull(item.recordminguodate )) htmlstr +='</dd><p><dt>民国日期MinguoDate</dt><dd>'+item.recordminguodate;
+			if(!isNull(item.recordredate )) htmlstr +='</dd><p><dt>帝王纪年REDate</dt><dd>'+item.recordredate;
+			if(!isNull(item.recordfulltext )) htmlstr +='</dd><p><dt>全文Fulltext</dt><dd>'+item.recordfulltext;
+			if(!isNull(item.recorddescription )) htmlstr +='</dd><p><dt>描述Description</dt><dd>'+item.recorddescription;
+			if(!isNull(item.recordtitle )) htmlstr +='</dd><p><dt>标题Title</dt><dd>'+item.recordtitle;
+			if(!isNull(item.recordpublisher )) htmlstr +='</dd><p><dt>出版方ContributorPublisher</dt><dd>'+item.recordpublisher;
+			htmlstr +='</dd></dl>';
+			$("#details").html(htmlstr);
+			window.localStorage.setItem("htmlstr",htmlstr);
+			return false;
+		}
+	});
+}
+function bigimg(recordid){
+	$("#bigimg").html('<div style="text-align: center;"><img src="tupian/'+recordid+'.png"></div>');
+	$('#myModalbigimg').modal({
+        keyboard: true
+    });
+	$('#myModal').modal('hide');
+}
+$('#myModalbigimg').on('hidden.bs.modal', function () {
+	$('#myModal').modal({
+		backdrop:'static',
+        keyboard: true
+    });
+	$("#details").html(window.localStorage.getItem("htmlstr"));
+})
+function isNull(str){
+    if(!!str && str != null && str.length > 0 && 'null' != str && 'undefined' != str){
+        return false;
+    }else{
+        return true;
+    }
+}
+</script>
+</body>
+</html>

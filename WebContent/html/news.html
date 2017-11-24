@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Ephemera</title>
+
+    <!-- Bootstrap -->
+    <link href="../zrlextpages/common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .pos{ position: absolute; top: 56%; left: 50%; margin-left: 60px; margin-top: 0px; width: 15px;}
+    .workingditu :hover{ transform: scale(1.4);}
+    </style>
+  </head>
+  <body>
+<header>
+	<div style="text-align: center;background-color: #1F1C3B;" ><img height="80" style="padding-top: 20px;" src="images/new_header.png" /></div>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul style="width: 100%;" class="nav navbar-nav">
+						<li id="menuabout" style="width: 25%;">
+							<a href="#" onclick="menu(this,'about');">
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-right: 50px;">WHAT</dd>
+								<dt style="text-align: center;font-size:x-large;">ABOUT</dt>
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-left: 70px;">US</dd>
+								<ul class="dropdown-menu" style="left: 25%">
+								<li>
+									 <a href="#" onclick="menu(this,'aboutdes');">DESCRIPTION</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'aboutteam');">TEAM</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'aboutgrant');">GRANT</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'abouthistory');">HISTORY</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'aboutcollab');">COLLABORATORS</a>
+								</li>
+								</ul>
+							</a>
+						</li>
+						<li style="width: 24%">
+						 	<a href="#" onclick="menu(this,'working');">
+						 		<dd style="text-align: center;font-size:xx-small;color: white;padding-right: 50px;">WHAT ARE WE</dd>
+								<dt style="text-align: center;font-size:x-large;">WORKING</dt>
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-left: 70px;">ON</dd> 
+							</a>
+						</li>
+						<li id="menufeatures" style="width: 24%">
+							 <a href="#"  onclick="menu(this,'features');">
+						 		<dd style="text-align: center;font-size:xx-small;color: white;padding-right: 50px;">WHAT</dd>
+								<dt style="text-align: center;font-size:x-large;">FEATURES</dt>
+								<dd style="text-align: center;font-size:xx-small;color: white;padding-left: 70px;">DO WE HAVE</dd> 
+								<ul class="dropdown-menu" style="left: 25%">
+								<li>
+									 <a href="#" onclick="menu(this,'featuresccaa');">CCAA</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'featuresads');">Subway Ads</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'featureswork');">Workshop</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'featureslec');">Lectures</a>
+								</li>
+								<li class="divider">
+								</li>
+								<li>
+									 <a href="#" onclick="menu(this,'featuresspe');">Special Issue</a>
+								</li>
+								</ul>
+							</a>
+						</li>
+						<li style="width: 25%">
+							 <a href="#"  onclick="menu(this,'news');">
+						 		<dd style="text-align: center;font-size:xx-small;color: red;padding-right: 50px;">READ OUR</dd>
+								<dt style="text-align: center;font-size:x-large;">NEWS</dt>
+								<dd style="text-align: center;font-size:xx-small;color: red;padding-left: 70px;">NOW</dd> 
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+<div id="myCarousel" class="carousel slide" data-ride="carousel" >
+    <!-- 轮播（Carousel）项目 -->
+    <div class="carousel-inner">
+        <div class="item active" align="center">
+            <img src="images/carousel1.jpg" onclick="location='images2.html'">
+        </div>
+        <div class="item" align="center">
+            <img src="images/carousel2.jpg">
+        </div>
+    </div>
+    <!-- 轮播（Carousel）导航 -->
+    <a class="carousel-control left" href="#myCarousel" 
+        data-slide="prev">&lsaquo;
+    </a>
+    <a class="carousel-control right" href="#myCarousel" 
+        data-slide="next">&rsaquo;
+    </a>
+</div>
+</header>
+<section id="about" hidden="true">
+<!-- <img height="280px" width="100%" src="images/middle.png" /> -->
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="content col-md-8 column">
+					<div class="page-header">
+						<h4>About Ephemera Project</h4>
+					</div>
+				</div>
+				<div class="col-md-4 column">
+					<div class="page-header">
+						<h4>Sponsors</h4>
+					</div>
+					<div style="text-align: center;" ><img width="20%"  src="images/new_luce.png" /></div>
+					<div style="text-align: center;" ><img width="30%"  src="images/new_rice.png" /></div>
+					<div style="text-align: center;" ><img width="50%"  src="images/CCAS logo - white.jpg" /></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="working" hidden="ture">
+ <div class="container">
+	<div class="row clearfix">
+	<div class="col-md-3 column"></div>
+		<div class="col-md-6 column">
+			<div class="page-header" style="text-align: center;">
+				<h4>The Interactive Map of Advertisment Gallery</h4>
+			</div>
+			<div style="text-align: center;"><img   src="images/ditu.jpg" usemap="#catmap" />
+			<map id="catmap" name="catmap">
+		        <area shape="rect" coords="380,237,415,265" href="images2.html" alt="" target="_blank">
+		    </map>
+			<!-- <a class="workingditu" href="images2.html"><img class="pos" src="images/red.png" /></a> -->
+			</div>
+		</div>
+	</div>
+	<div style="text-align: center;">
+	<button type="button" class="btn btn-danger" style="width: 150px;" onclick="nextsection(this,'working')">MAP</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingsearch')">SEARCH</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingcommercial')">COMMERCIAL ADS</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingsubway')">SUBWAY ADS</button>
+	</div>
+</div>
+</section>
+<section id="workingcommercial" hidden="ture">
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-3 column">
+				</div>
+				<div class="col-md-6 column">
+					<div class="page-header" style="text-align: center;">
+						<h4>Chinese Commercial Advertisment Archieve</h4>
+					</div>
+					<div style="text-align: center;" ><a href="images2.html"><img width="50%"  src="images/ditie.png" /></a></div>
+				</div>
+			</div>
+		</div>
+		 <div class="form-group col-lg-12" style="height: 30px;padding-bottom: 30px;"></div>
+	</div>
+	<div style="text-align: center;">
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'working')">MAP</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingsearch')">SEARCH</button>
+	<button type="button" class="btn btn-danger" style="width: 150px;" onclick="nextsection(this,'workingcommercial')">COMMERCIAL ADS</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingsubway')">SUBWAY ADS</button>
+	</div>
+</div>
+</section>
+<section id="workingsubway" hidden="ture">
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-3 column">
+		</div>
+		<div class="col-md-6 column">
+			<div class="page-header" style="text-align: center;">
+				<h4>Subway Advertisement Archive</h4>
+				    <!-- <form class="bs-example bs-example-form" role="form">
+				        <div class="row">
+				        	<div class="col-lg-3"></div>
+				            <div class="col-lg-6" onclick="nextsection(this,'workingsearch')">
+				                <div class="input-group">
+				                    <input type="text" class="form-control">
+				                    <span class="input-group-btn">
+				                        <button class="btn btn-default" type="button">SEARCH</button>
+				                    </span>
+				                </div>/input-group
+				            </div>/.col-lg-6
+				        </div>/.row
+				    </form> -->
+			</div>
+			<div style="text-align: center;"><img width="50%"  src="images/subway.png" /></div>
+		</div>
+		 <div class="form-group col-lg-12" style="height: 30px;padding-bottom: 30px;">
+            </div>
+	</div>
+	<div style="text-align: center;">
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'working')">MAP</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingsearch')">SEARCH</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingcommercial')">COMMERCIAL ADS</button>
+	<button type="button" class="btn btn-danger" style="width: 150px;" onclick="nextsection(this,'workingsubway')">SUBWAY ADS</button>
+	</div>
+</div>
+</section>
+<section id="workingsearch" hidden="ture" >
+ <div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header" style="text-align: center;">
+				<h4>Search</h4>
+			</div>
+			<form id="searchform" class="form-horizontal" role="form" >
+			  <div class="form-group col-lg-6">
+			    <label for="Product" class="col-sm-4 control-label">Product 商品</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordproduct" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="Company" class="col-sm-4 control-label">Company 公司</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordcompany" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="Category" class="col-sm-4 control-label">Category 分类</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordcategory" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="Agency" class="col-sm-4 control-label">Agency 代理商</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordagency" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="City" class="col-sm-4 control-label">City 城市</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordaddress" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="Year" class="col-sm-4 control-label">Year 年</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordyear" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="Title" class="col-sm-4 control-label">Title 标题</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordtitle" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="form-group col-lg-6">
+			    <label for="Nationality" class="col-sm-4 control-label">Nationality 国别</label>
+			    <div class="col-sm-8">
+			      <input type="text" class="form-control" id="recordnationality" placeholder="请输入">
+			    </div>
+			  </div>
+			  <div class="col-lg-1"></div>
+			  <div class="col-lg-10">
+                <div class="input-group">
+                    <div class="checkbox">
+				    <label>
+				      <input type="checkbox" value="Picture[插图]">Picture[插图]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Male[男性]">Male[男性]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Female[女性]">Female[女性]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Old people[老年人]">Old people[老年人]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Young people[青年人]">Young people[青年人]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Middle age people[中年人]">Middle age people[中年人]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Text[文本]">Text[文本]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Child[孩童]">Child[孩童]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Infant[婴儿]">Infant[婴儿]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Human[人]">Human[人]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Animal[动物]">Animal[动物]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Plant[植物]">Plant[植物]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Chinese[中国人]">Chinese[中国人]
+				    </label>
+				    <label>
+				      <input type="checkbox" value="Foreign[外国人]">Foreign[外国人]
+				    </label>
+			  		</div>
+                    <span class="input-group-btn">
+                    	<button class="btn btn-default" type="button" onclick="searchdate();">SEARCH</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+            <div class="form-group col-lg-12" style="height: 30px;padding-bottom: 30px;">
+            </div>
+			</form>
+		</div>
+	</div>
+	<div style="text-align: center;">
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'working')">MAP</button>
+	<button type="button" class="btn btn-danger" style="width: 150px;" onclick="nextsection(this,'workingsearch')">SEARCH</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingcommercial')">COMMERCIAL ADS</button>
+	<button type="button" class="btn btn-primary" style="width: 150px;" onclick="nextsection(this,'workingsubway')">SUBWAY ADS</button>
+	</div>
+</div>
+</section>
+<section id="features" hidden="true">
+<!-- <img height="280px" width="100%" src="images/middle.png" /> -->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="content col-md-12 column">
+					<div class="page-header">
+						<h4>Features</h4>
+					</div>
+					RESEARCHERS
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="news">
+<!-- <img height="280px" width="100%" src="images/middle.png" /> -->
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="content row clearfix">
+				<div class="col-md-4 column">
+					<div class="page-header">
+						<h4 onclick="nextpages(this,'newsid')">News</h4>
+					</div>
+					RESEARCHERS
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<a style="text-align: center;" ></a>
+		</div>
+	</div>
+</div>
+</section>
+<footer style="text-align: center;background-color: #1F1C3B;margin-top: 36px;">
+<div style="text-align: center;" ><img height="40" src="" /></div>
+<div style="text-align: center;color:white;" >All Rights Reserved By The Ephemera Project</div>
+<div style="text-align: center;" ><img width="2%"  src="images/new_luce.png" /><img width="10%"  src="images/new_rice.png" style="padding-left: 40px;"/></div>
+<div style="text-align: center;" ><a href="index.html">
+<img width="20px"  src="images/1.png"  style="margin-left: -10px;"/>
+<img width="20px"  src="images/2.png"  style="margin-left: 20px;" />
+<img width="20px"  src="images/3.png" style="margin-left: 20px;" />
+<img width="20px"  src="images/4.png" style="margin-left: 20px;"/>
+<img width="20px"  src="images/5.png"   style="margin-left: 20px;"/>
+</a>
+</div>
+</footer>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/fang.js"></script>
+    <script src="js/news.js"></script>
+  </body>
+</html>

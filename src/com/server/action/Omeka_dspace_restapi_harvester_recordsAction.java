@@ -13,6 +13,7 @@ import com.system.tools.base.BaseActionDao;
 import com.system.tools.pojo.Fileinfo;
 import com.system.tools.pojo.Queryinfo;
 import com.system.tools.util.CommonUtil;
+import com.system.tools.util.DateUtils;
 import com.system.tools.util.FileUtil;
 import com.system.tools.pojo.Pageinfo;
 
@@ -34,6 +35,7 @@ public class Omeka_dspace_restapi_harvester_recordsAction extends BaseActionDao 
 		for(Omeka_dspace_restapi_harvester_records temp:cuss){
 			//if(CommonUtil.isNull(temp.getId()))
 			//	temp.setId(CommonUtil.getNewId());
+			temp.setDatestamp(DateUtils.getDateTime());
 			result = insSingle(temp);
 		}
 		responsePW(response, result);
@@ -66,6 +68,7 @@ public class Omeka_dspace_restapi_harvester_recordsAction extends BaseActionDao 
 		for(Omeka_dspace_restapi_harvester_records temp:cuss){
 		//	if(CommonUtil.isNull(temp.getId()))
 		//		temp.setId(CommonUtil.getNewId());
+			temp.setDatestamp(DateUtils.getDateTime());
 			result = insSingle(temp);
 		}
 		responsePW(response, result);

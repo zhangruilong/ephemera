@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Ephemera</title>
+
+    <!-- Bootstrap -->
+    <link href="../zrlextpages/common/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <style type="text/css">
+    .pos{ position: absolute; top: 56%; left: 50%; margin-left: 60px; margin-top: 0px; width: 15px;}
+    .workingditu :hover{ transform: scale(1.4);}
+    </style>
+  </head>
+  <body>
+<header>
+ <div style="text-align: center;background-color: #1F1C3B;" ><img height="80" style="padding-top: 20px;" src="images/new_header.png" /></div>
+</header>
+<section id="news">
+<div class="container">
+	<div class="row clearfix">
+		<div class="content col-md-12 column">
+		</div>
+	</div>
+</div>
+</section>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="../zrlextpages/common/jquery/jquery-2.1.4.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../zrlextpages/common/bootstrap/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script type="text/javascript">
+    $(function(){
+    	var newsid = getQueryString("newsid");
+    	$.ajax({
+    		url: "Cms_contentAction.do?method=selAll",
+    		data: {
+    			wheresql:"contentid='"+newsid+"'"
+    		},
+    		success: function(r) {
+    			var resp = eval('('+r+')'); 
+    			$("#news .content").html("");
+    			$.each(resp.root, function(i, item) {
+    				$("#news .content").append('<div class="page-header"><h4>'
+    						+item.contentname+'</h4></div>'
+    						+item.contentdetail);
+    			});
+    		},
+    		error:function(r) {
+    			var resp = eval(r); 
+    			alert(resp.msg);
+    		}
+    	});
+    })
+    //获取url中的参数
+function getQueryString(name){
+var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+var urlparastr = decodeURI(window.location.search);			//防止中文乱码
+//alert(urlparastr);
+var r = urlparastr.substr(1).match(reg);  //匹配目标参数
+if (r!=null) return decodeURI(r[2]); return null; //返回参数值
+} 
+    </script>
+  </body>
+</html>

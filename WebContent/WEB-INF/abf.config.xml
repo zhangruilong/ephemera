@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans>
 	<bean id="404" class="com.system.tools.base.HandlerFor404" />
-	<bean id="BaseAction" class="com.system.tools.base.BaseAction" />
 	<bean id="System_userAction" class="com.system.action.more.System_userAction" />
 	<bean id="System_powerAction" class="com.system.action.more.System_powerAction" />
 	<bean id="System_powerviewAction" class="com.system.action.System_powerviewAction" />
@@ -32,9 +31,12 @@
 	<bean id="Cms_jobpublishAction" class="com.cms.action.Cms_jobpublishAction" />
 	<bean id="Cms_contentAction" class="com.cms.action.more.Cms_contentAction" />
 
-	<bean id="Omeka_element_textsAction" class="com.server.action.Omeka_element_textsAction" />
-	<bean id="Omeka_dspace_restapi_harvester_recordsAction" class="com.server.action.Omeka_dspace_restapi_harvester_recordsAction" />
-	<bean id="Omeka_search_textsAction" class="com.server.action.more.Omeka_search_textsAction" />
-	
-	<bean id="SearchtextviewAction" class="com.server.action.SearchtextviewAction" />
+	<bean id="Omeka_dspace_restapi_harvester_recordsService" class="com.server.service.Omeka_dspace_restapi_harvester_recordsService" />
+	<bean id="Omeka_element_textsService" class="com.server.service.Omeka_element_textsService" />
+	<bean id="Omeka_elementsService" class="com.server.service.Omeka_elementsService" />
+	<bean id="Omeka_search_textsService" class="com.server.service.Omeka_search_textsService" />
+	<bean id="SearchtextviewService" class="com.server.service.SearchtextviewService" />
+	<bean id="ElementtextsviewService" class="com.server.service.ElementtextsviewService" />
+	<bean id="Server_companyService" class="com.server.service.Server_companyService" />
+	<bean id="Server_recordService" class="com.server.service.Server_recordService" />
 </beans>
